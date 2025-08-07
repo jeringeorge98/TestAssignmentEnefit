@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Region, Marker } from "react-native-maps";
+import { stationData } from "@/src/types";
 
 type MapComponentProps = {
-  markers: Region[];
+  markers: stationData[];
 };
 
 export default function MapComponent({ markers }: MapComponentProps) {
@@ -20,7 +21,19 @@ export default function MapComponent({ markers }: MapComponentProps) {
         provider={PROVIDER_GOOGLE}
         initialRegion={initialRegion}
         showsMyLocationButton={true}
-      />
+      >
+        {markers.map((item) => (
+          <Marker
+            key={item.id}
+            coordinate={{
+              latitude: item.geocode.lat,
+              longitude: item.geocode.lng,
+            }}
+            title={item.name}
+            description={item.status}
+          />
+        ))}
+      </MapView>
     </View>
   );
 }

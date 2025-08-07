@@ -1,13 +1,21 @@
-import { StyleSheet } from "react-native";
+import { ActivityIndicator, StyleSheet } from "react-native";
 import { Text, View } from "@/src/components/Themed";
 import MapComponent from "@/src/components/MapComponent";
-
+import { useGetStations } from "@/src/api";
+import { Region } from "react-native-maps";
+import { stationData } from "@/src/types";
 export default function MapsScreen() {
   // need to display a map with the markers
+  const { data, isLoading, error } = useGetStations();
 
+  console.log("Station data", data);
+
+  if (!data || isLoading)
+    return <ActivityIndicator size="large" color="#0000ff" />;
+  if (error) return <Text>Error: {error.message}</Text>;
   return (
     <View style={styles.container}>
-      <MapComponent />
+      <MapComponent markers={data as stationData[]} />
     </View>
   );
 }
