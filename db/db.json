@@ -1,0 +1,109 @@
+{
+    "stations": [
+        {
+            "id": "1",
+            "name": "Downtown Mall Charger",
+            "geocode": {
+                "lat": 59.437,
+                "lng": 24.7536
+            },
+            "status": "available",
+            "power_rating": 50
+        },
+        {
+            "id": "2",
+            "name": "Airport Terminal A",
+            "geocode": {
+                "lat": 59.4133,
+                "lng": 24.8328
+            },
+            "status": "occupied",
+            "power_rating": 150
+        },
+        {
+            "id": "3",
+            "name": "Supermarket Plaza",
+            "geocode": {
+                "lat": 59.4269,
+                "lng": 24.7271
+            },
+            "status": "available",
+            "power_rating": 22
+        },
+        {
+            "id": "4",
+            "name": "Business Center North",
+            "geocode": {
+                "lat": 59.4389,
+                "lng": 24.7545
+            },
+            "status": "out_of_service",
+            "power_rating": 75
+        },
+        {
+            "id": "5",
+            "name": "Hotel Grand Charging",
+            "geocode": {
+                "lat": 59.4311,
+                "lng": 24.7456
+            },
+            "status": "available",
+            "power_rating": 100
+        },
+        {
+            "id": "6",
+            "name": "University Campus East",
+            "geocode": {
+                "lat": 59.395,
+                "lng": 24.6714
+            },
+            "status": "occupied",
+            "power_rating": 22
+        },
+        {
+            "id": "7",
+            "name": "Sports Complex Charger",
+            "geocode": {
+                "lat": 59.4175,
+                "lng": 24.7947
+            },
+            "status": "available",
+            "power_rating": 50
+        },
+        {
+            "id": "8",
+            "name": "Residential Area South",
+            "geocode": {
+                "lat": 59.4089,
+                "lng": 24.7234
+            },
+            "status": "available",
+            "power_rating": 11
+        },
+        {
+            "id": "9",
+            "name": "Industrial Park Charger",
+            "geocode": {
+                "lat": 59.4567,
+                "lng": 24.7892
+            },
+            "status": "out_of_service",
+            "power_rating": 200
+        },
+        {
+            "id": "10",
+            "name": "Beach Resort Charger",
+            "geocode": {
+                "lat": 59.3834,
+                "lng": 24.6123
+            },
+            "status": "available",
+            "power_rating": 75
+        }
+    ],
+  
+  "charging_session":{
+    "ongoing_rate": 21.45,
+    "session": "active"
+  }  
+}    
