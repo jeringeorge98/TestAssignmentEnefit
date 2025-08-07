@@ -1,10 +1,13 @@
 import { StyleSheet } from "react-native";
 import { Text, View } from "@/src/components/Themed";
+import MapComponent from "@/src/components/MapComponent";
 
-export default function TabOneScreen() {
+export default function MapsScreen() {
+  // need to display a map with the markers
+
   return (
     <View style={styles.container}>
-      <Text> This is tab one screen </Text>
+      <MapComponent />
     </View>
   );
 }
@@ -12,8 +15,6 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   title: {
     fontSize: 20,
