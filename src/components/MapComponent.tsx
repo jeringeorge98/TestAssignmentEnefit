@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
+import { withModalProvider } from "./withModalProvider";
 import { StyleSheet, View, Image } from "react-native";
 import MapView, {
   PROVIDER_GOOGLE,
@@ -7,21 +8,27 @@ import MapView, {
   Callout,
 } from "react-native-maps";
 import { stationData } from "@/src/types";
-import ChargeViewDetailsCardComponent from "./ChargeViewDetailsCardComponent";
-
+// import ChargeViewDetailsCardComponent from "./ChargeViewDetailsCardComponent";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
+import { ChargeViewDetailsCardComponent } from "./ChargeViewDetailsCardComponent";
 type MapComponentProps = {
   markers: stationData[];
 };
 
 // const ChargerIcon = require("@/assets/images/charger.png");
 
-export default function MapComponent({ markers }: MapComponentProps) {
+const MapComponent = ({ markers }: MapComponentProps) => {
   const mapRef = useRef<MapView>(null);
+  const chargeDetailsCardref = useRef<BottomSheetModal>(null);
+  const [selectedStation, setSelectedStation] = useState<stationData>();
 
-  const handleMarkerPress = (station: stationData) => {
+  const handleMarkerPress = useCallback((station: stationData) => {
     console.log(station);
     centerOnStation(station);
-  };
+    setSelectedStation(station);
+
+    chargeDetailsCardref.current?.present(station);
+  }, []);
 
   // Function to center map on a specific station
   const centerOnStation = (station: stationData) => {
@@ -69,15 +76,16 @@ export default function MapComponent({ markers }: MapComponentProps) {
               source={require("../../assets/images/charging-station.png")}
               style={styles.markerStyle}
             />
-            <Callout tooltip>
-              <ChargeViewDetailsCardComponent stationDetails={item} />
-            </Callout>
           </Marker>
         ))}
       </MapView>
+      <ChargeViewDetailsCardComponent
+        ref={chargeDetailsCardref}
+        stationDetails={selectedStation}
+      />
     </View>
   );
-}
+};
 const styles = StyleSheet.create({
   baseContainer: {
     flex: 1,
@@ -93,3 +101,4 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
 });
+export default withModalProvider(MapComponent);
