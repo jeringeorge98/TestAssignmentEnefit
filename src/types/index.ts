@@ -5,6 +5,7 @@ export type stationData = {
     lat: number;
     lng: number;
   };
+  address: string;
   status: string;
   power_rating: number;
 };

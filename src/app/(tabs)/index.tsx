@@ -10,9 +10,15 @@ export default function MapsScreen() {
 
   console.log("Station data", data);
 
-  if (!data || isLoading)
-    return <ActivityIndicator size="large" color="#0000ff" />;
-  if (error) return <Text>Error: {error.message}</Text>;
+  if (isLoading) return <ActivityIndicator size="large" color="#0000ff" />;
+  if (!data || error)
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text style={{ alignContent: "center" }}>
+          No Data Found or Error fetching data
+        </Text>
+      </View>
+    );
   return (
     <View style={styles.container}>
       <MapComponent markers={data as stationData[]} />

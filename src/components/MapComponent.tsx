@@ -1,18 +1,46 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import MapView, { PROVIDER_GOOGLE, Region, Marker } from "react-native-maps";
+import React, { useRef } from "react";
+import { StyleSheet, View, Image } from "react-native";
+import MapView, {
+  PROVIDER_GOOGLE,
+  Region,
+  Marker,
+  Callout,
+} from "react-native-maps";
 import { stationData } from "@/src/types";
+import ChargeViewDetailsCardComponent from "./ChargeViewDetailsCardComponent";
 
 type MapComponentProps = {
   markers: stationData[];
 };
 
+// const ChargerIcon = require("@/assets/images/charger.png");
+
 export default function MapComponent({ markers }: MapComponentProps) {
+  const mapRef = useRef<MapView>(null);
+
+  const handleMarkerPress = (station: stationData) => {
+    console.log(station);
+    centerOnStation(station);
+  };
+
+  // Function to center map on a specific station
+  const centerOnStation = (station: stationData) => {
+    mapRef.current?.animateToRegion(
+      {
+        latitude: station.geocode.lat,
+        longitude: station.geocode.lng,
+        latitudeDelta: 0.01, // Zoom in closer
+        longitudeDelta: 0.01,
+      },
+      1000
+    ); // 1 second animation
+  };
+
   const initialRegion: Region = {
     latitude: 59.437,
     longitude: 24.7536,
-    latitudeDelta: 0.05,
-    longitudeDelta: 0.05,
+    latitudeDelta: 0.08,
+    longitudeDelta: 0.08,
   };
   return (
     <View style={styles.baseContainer}>
@@ -21,7 +49,11 @@ export default function MapComponent({ markers }: MapComponentProps) {
         provider={PROVIDER_GOOGLE}
         initialRegion={initialRegion}
         showsMyLocationButton={true}
+        showsUserLocation={true}
+        ref={mapRef}
       >
+        <Marker coordinate={initialRegion} pinColor="blue"></Marker>
+
         {markers.map((item) => (
           <Marker
             key={item.id}
@@ -31,7 +63,16 @@ export default function MapComponent({ markers }: MapComponentProps) {
             }}
             title={item.name}
             description={item.status}
-          />
+            onPress={() => handleMarkerPress(item)}
+          >
+            <Image
+              source={require("../../assets/images/charging-station.png")}
+              style={styles.markerStyle}
+            />
+            <Callout tooltip>
+              <ChargeViewDetailsCardComponent stationDetails={item} />
+            </Callout>
+          </Marker>
         ))}
       </MapView>
     </View>
@@ -41,8 +82,14 @@ const styles = StyleSheet.create({
   baseContainer: {
     flex: 1,
   },
+
   map: {
     width: "100%",
     height: "100%",
+  },
+  markerStyle: {
+    width: 60,
+    height: 60,
+    resizeMode: "contain",
   },
 });

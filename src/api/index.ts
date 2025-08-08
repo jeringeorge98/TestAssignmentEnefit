@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { stationData } from "../types";
 import axios from "axios";
-const BASE_URL = "http://172.31.144.24:3000";
+const BASE_URL = "http://localhost:3000";
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
@@ -14,7 +14,7 @@ export const useGetStations = () => {
   return useQuery({
     queryKey: ["stations"],
     queryFn: () => getStations(),
-    staleTime: 1000 * 60 * 5, // 5 minutes
+    staleTime: 1000 * 60 * 1, // 1 minute
     enabled: true,
   });
 };
