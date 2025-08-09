@@ -9,7 +9,18 @@
             },
             "address": "Metro Plaza, Viru väljak 2, 10111 Tallinn, Estonia",
             "status": "available",
-            "power_rating": 50
+            "power_rating": 50,
+            "distance": 1250,
+            "connectors": [
+                {
+                    "power": 50,
+                    "quantity": 2
+                },
+                {
+                    "power": 22,
+                    "quantity": 1
+                }
+            ]
         },
         {
             "id": "2",
@@ -18,9 +29,20 @@
                 "lat": 59.4133,
                 "lng": 24.8328
             },
-            "address":"Tallinn Airport, Tartu mnt 101, 10112 Tallinn, Estonia",
+            "address": "Tallinn Airport, Tartu mnt 101, 10112 Tallinn, Estonia",
             "status": "occupied",
-            "power_rating": 150
+            "power_rating": 150,
+            "distance": 3200,
+            "connectors": [
+                {
+                    "power": 150,
+                    "quantity": 1
+                },
+                {
+                    "power": 50,
+                    "quantity": 3
+                }
+            ]
         },
         {
             "id": "3",
@@ -29,9 +51,16 @@
                 "lat": 59.4269,
                 "lng": 24.7271
             },
-            "address":"Tehnika 75, 10142 Tallinn, Estonia",
+            "address": "Tehnika 75, 10142 Tallinn, Estonia",
             "status": "available",
-            "power_rating": 22
+            "power_rating": 22,
+            "distance": 890,
+            "connectors": [
+                {
+                    "power": 22,
+                    "quantity": 2
+                }
+            ]
         },
         {
             "id": "4",
@@ -40,9 +69,20 @@
                 "lat": 59.4389,
                 "lng": 24.7545
             },
-            "address":"Mere pst 6, 10111 Tallinn, Estonia",
+            "address": "Mere pst 6, 10111 Tallinn, Estonia",
             "status": "out_of_service",
-            "power_rating": 75
+            "power_rating": 75,
+            "distance": 2100,
+            "connectors": [
+                {
+                    "power": 75,
+                    "quantity": 1
+                },
+                {
+                    "power": 22,
+                    "quantity": 2
+                }
+            ]
         },
         {
             "id": "5",
@@ -53,7 +93,18 @@
             },
             "address": "Pärnu highway 25, 10141 Tallinn, Estonia",
             "status": "available",
-            "power_rating": 100
+            "power_rating": 100,
+            "distance": 1560,
+            "connectors": [
+                {
+                    "power": 100,
+                    "quantity": 1
+                },
+                {
+                    "power": 50,
+                    "quantity": 2
+                }
+            ]
         },
         {
             "id": "6",
@@ -64,7 +115,14 @@
             },
             "address": "Tallinna Tehnikaülikool, Ehitajate tee 5, 19086 Tallinn, Estonia",
             "status": "occupied",
-            "power_rating": 22
+            "power_rating": 22,
+            "distance": 4200,
+            "connectors": [
+                {
+                    "power": 22,
+                    "quantity": 4
+                }
+            ]
         },
         {
             "id": "7",
@@ -73,9 +131,20 @@
                 "lat": 59.4175,
                 "lng": 24.7947
             },
-            "address":"Tartu mnt, 11101 Tallinn, Estonia",
+            "address": "Tartu mnt, 11101 Tallinn, Estonia",
             "status": "available",
-            "power_rating": 50
+            "power_rating": 50,
+            "distance": 1780,
+            "connectors": [
+                {
+                    "power": 50,
+                    "quantity": 2
+                },
+                {
+                    "power": 22,
+                    "quantity": 1
+                }
+            ]
         },
         {
             "id": "8",
@@ -84,9 +153,16 @@
                 "lat": 59.4089,
                 "lng": 24.7234
             },
-            "address":"Kotka Hall, Linnu tee 5, 11311 Tallinn, Estonia",
+            "address": "Kotka Hall, Linnu tee 5, 11311 Tallinn, Estonia",
             "status": "available",
-            "power_rating": 11
+            "power_rating": 11,
+            "distance": 650,
+            "connectors": [
+                {
+                    "power": 11,
+                    "quantity": 2
+                }
+            ]
         },
         {
             "id": "9",
@@ -95,9 +171,20 @@
                 "lat": 59.4508,
                 "lng": 24.8243
             },
-            "address":"Panga, 12011 Tallinn, Estonia",
+            "address": "Panga, 12011 Tallinn, Estonia",
             "status": "out_of_service",
-            "power_rating": 200
+            "power_rating": 200,
+            "distance": 5800,
+            "connectors": [
+                {
+                    "power": 200,
+                    "quantity": 1
+                },
+                {
+                    "power": 150,
+                    "quantity": 1
+                }
+            ]
         },
         {
             "id": "10",
@@ -108,12 +195,29 @@
             },
             "address": "Tähetorni, 13525 Tallinn, Estonia",
             "status": "available",
-            "power_rating": 75
+            "power_rating": 75,
+            "distance": 3400,
+            "connectors": [
+                {
+                    "power": 75,
+                    "quantity": 1
+                },
+                {
+                    "power": 50,
+                    "quantity": 1
+                }
+            ]
         }
     ],
-  
-  "charging_session":{
-    "ongoing_rate": 21.45,
-    "session": "active"
-  }  
+    
+    "spot_pricing": {
+        "base_rate": 0.35,
+        "min_rate": 0.25,
+        "max_rate": 0.65,
+        "volatility_factor": 0.15,
+        "last_updated": "",
+        "currency": "EUR"
+      },
+
+      "charging_sessions":[]
 }    

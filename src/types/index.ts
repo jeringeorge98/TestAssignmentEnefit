@@ -1,3 +1,4 @@
+// src/types/index.ts
 export type stationData = {
   id: string;
   name: string;
@@ -8,4 +9,22 @@ export type stationData = {
   address: string;
   status: string;
   power_rating: number;
+  distance: number; // New field
+  connectors: Connector[]; // New field
+};
+
+export type Connector = {
+  power: number;
+  quantity: number;
+};
+
+export type ChargingSessions = {
+  id: string;
+  station_id: string;
+  connector_id: string;
+  start_time: string;
+  end_time?: string;
+  charge_rate: number;
+  total_cost: number;
+  status: "active" | "completed" | "cancelled";
 };

@@ -8,7 +8,7 @@ export default function MapsScreen() {
   // need to display a map with the markers
   const { data, isLoading, error } = useGetStations();
 
-  console.log("Station data", data);
+  // console.log("Station data", data);
 
   if (isLoading) return <ActivityIndicator size="large" color="#0000ff" />;
   if (!data || error)

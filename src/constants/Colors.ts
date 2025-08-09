@@ -16,16 +16,18 @@ export default {
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
   },
-
+  colorPrimaryGreen: "#008834", //Emerald Green
   // Background Colors
   background: "#F8FAFC", // Very light gray-blue background
   cardBackground: "#FFFFFF", // Pure white for cards
-  surface: "#F1F5F9", // Light gray for secondary surfaces
+  surface: "#F1F5F9",
+  backgroundGrey: "#e0dede", // Light gray for secondary surfaces
 
   // Text Colors
   textPrimary: "#1E293B", // Dark slate for main text
   textSecondary: "#64748B", // Medium gray for secondary text
-  textTertiary: "#94A3B8", // Light gray for tertiary text
+  textTertiary: "#94A3B8",
+  textWhite: "#FFFFFF", // Light gray for tertiary text
 
   // Status Colors
   statusAvailable: "#10B981", // Green for available stations
@@ -43,7 +45,7 @@ export default {
   shadow: "rgba(0, 0, 0, 0.1)", // Subtle shadow
 
   // Success/Error Colors
-  success: "#10B981", // Green for success states
+  success: "#34eb7a", // Green for success states
   error: "#EF4444", // Red for error states
   warning: "#F59E0B",
 };
