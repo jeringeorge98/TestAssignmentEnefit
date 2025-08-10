@@ -70,13 +70,21 @@ export default function ChargingSession() {
       {/* Stats grid */}
       <View style={styles.statsGrid}>
         <View style={styles.statCard}>
-          <MaterialIcons name="euro" size={24} color={Colors.neon.primary} />
+          <MaterialIcons
+            name="euro"
+            size={24}
+            color={Colors.neonLight.primary}
+          />
           <Text style={styles.statValue}>{chargeRate} /kWh</Text>
           <Text style={styles.statLabel}>Charge Rate</Text>
         </View>
 
         <View style={styles.statCard}>
-          <MaterialIcons name="power" size={24} color={Colors.neon.primary} />
+          <MaterialIcons
+            name="power"
+            size={24}
+            color={Colors.neonLight.primary}
+          />
           <Text style={styles.statValue}>{powerRating} kW</Text>
           <Text style={styles.statLabel}>Power Rating</Text>
         </View>
@@ -84,7 +92,7 @@ export default function ChargingSession() {
           <MaterialIcons
             name="settings-input-svideo"
             size={24}
-            color={Colors.neon.primary}
+            color={Colors.neonLight.primary}
           />
           <Text style={styles.statValue}>
             {parseInt(connector as string) + 1}
@@ -140,13 +148,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
   },
-  statusDot: {
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    backgroundColor: Colors.neonLight.primary,
-    marginRight: 8,
-  },
+
   statusText: {
     color: Colors.neonLight.text,
     fontSize: 16,
@@ -161,13 +163,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "50%",
   },
-  chargingContainer: {
-    padding: 20,
-    borderRadius: 20,
-    backgroundColor: Colors.neonLight.surface,
-    borderWidth: 1,
-    borderColor: Colors.neonLight.primary,
-  },
+
   chargingAnimation: {
     width: "100%",
     height: "100%",

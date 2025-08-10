@@ -33,7 +33,7 @@ export default function History() {
           >
             {item.station_id}
           </Text>
-          <Text>{item.end_time}</Text>
+          <Text>{item.start_time}</Text>
         </View>
         <View style={styles.rowView}>
           <Text
@@ -44,7 +44,7 @@ export default function History() {
             }}
             numberOfLines={2}
           >
-            Duration {duration}
+            Duration {Math.floor(duration / 1000)} seconds
           </Text>
           <Text style={{ color: Colors.textTertiary, fontSize: 14 }}>
             {item.charge_rate} kw/H

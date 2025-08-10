@@ -225,6 +225,21 @@
       "start_time": "2025-08-10T16:40:29.247Z",
       "charge_rate": 0.19,
       "end_time": "2025-08-10T16:41:43.490Z"
+    },
+    {
+      "id": "0.3805369928649229",
+      "station_id": "Residential Area South",
+      "status": "ACTIVE",
+      "start_time": "2025-08-10T16:49:19.468Z",
+      "charge_rate": 0.17
+    },
+    {
+      "id": "0.11559370934970079",
+      "station_id": "Hotel Grand Charging",
+      "status": "COMPLETED",
+      "start_time": "2025-08-10T18:01:26.872Z",
+      "charge_rate": 0.15,
+      "end_time": "2025-08-10T18:01:34.825Z"
     }
   ]
 }
