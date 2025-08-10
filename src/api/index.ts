@@ -1,7 +1,7 @@
 import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import { ChargingSessions, stationData } from "../types";
 import axios from "axios";
-import { SpotPrice, SpotPricingService } from "../service/spotPricingService";
+import { SpotPricingService } from "../service/spotPricingService";
 const BASE_URL = "http://localhost:3000";
 
 const apiClient = axios.create({

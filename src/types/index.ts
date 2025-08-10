@@ -9,10 +9,14 @@ export type stationData = {
   address: string;
   status: string;
   power_rating: number;
-  distance: number; // New field
-  connectors: Connector[]; // New field
+  distance: number;
+  connectors: Connector[];
 };
-
+export type SpotPrice = {
+  rate: number;
+  curreny: string;
+  lastUpdated: string;
+};
 export type Connector = {
   power: number;
   quantity: number;

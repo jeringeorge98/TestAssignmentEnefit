@@ -1,8 +1,4 @@
-export interface SpotPrice {
-  rate: number;
-  curreny: string;
-  lastUpdated: string;
-}
+import { SpotPrice } from "../types";
 
 export class SpotPricingService {
   private static averageRate = 0.45;
