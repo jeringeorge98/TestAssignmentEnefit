@@ -20,11 +20,10 @@ export type Connector = {
 
 export type ChargingSessions = {
   id: string;
-  station_id: string;
-  connector_id: string;
-  start_time: string;
+  station_id?: string;
+  start_time?: string;
   end_time?: string;
-  charge_rate: number;
-  total_cost: number;
-  status: "active" | "completed" | "cancelled";
+  charge_rate?: number;
+  total_cost?: number;
+  status: "ACTIVE" | "COMPLETED";
 };

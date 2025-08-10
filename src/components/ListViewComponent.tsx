@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 import { stationData } from "../types/index";
 import Colors from "../constants/Colors";
+import { router } from "expo-router";
 
 type ListViewComponentProps = {
   data: stationData;
@@ -10,8 +11,19 @@ type ListViewComponentProps = {
 export const ListViewComponent = ({
   data: stationData,
 }: ListViewComponentProps) => {
+  const handleOnPress = () => {
+    router.push({
+      pathname: "/startCharging",
+      params: {
+        stationName: stationData.name,
+        noOfConnectors: stationData.connectors.length.toString(),
+        powerRating: stationData.power_rating.toString(),
+      },
+    });
+  };
+
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={handleOnPress}>
       <View style={styles.rowView}>
         <Text
           style={{
@@ -39,7 +51,7 @@ export const ListViewComponent = ({
           {stationData.power_rating} kWh
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 };
 const styles = StyleSheet.create({

@@ -72,6 +72,15 @@ function RootLayoutNav() {
                 headerShown: true,
               }}
             />
+            <Stack.Screen
+              name="chargingSession"
+              options={{
+                presentation: "card",
+                headerTitle: "Your Session",
+                headerShown: false,
+                headerBackVisible: true,
+              }}
+            />
           </Stack>
         </ThemeProvider>
       </QueryClientProvider>

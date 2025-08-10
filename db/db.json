@@ -1,223 +1,251 @@
 {
-    "stations": [
-        {
-            "id": "1",
-            "name": "Downtown Mall Charger",
-            "geocode": {
-                "lat": 59.437,
-                "lng": 24.7536
-            },
-            "address": "Metro Plaza, Viru väljak 2, 10111 Tallinn, Estonia",
-            "status": "available",
-            "power_rating": 50,
-            "distance": 1250,
-            "connectors": [
-                {
-                    "power": 50,
-                    "quantity": 2
-                },
-                {
-                    "power": 22,
-                    "quantity": 1
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "name": "Airport Terminal A",
-            "geocode": {
-                "lat": 59.4133,
-                "lng": 24.8328
-            },
-            "address": "Tallinn Airport, Tartu mnt 101, 10112 Tallinn, Estonia",
-            "status": "occupied",
-            "power_rating": 150,
-            "distance": 3200,
-            "connectors": [
-                {
-                    "power": 150,
-                    "quantity": 1
-                },
-                {
-                    "power": 50,
-                    "quantity": 3
-                }
-            ]
-        },
-        {
-            "id": "3",
-            "name": "Supermarket Plaza",
-            "geocode": {
-                "lat": 59.4269,
-                "lng": 24.7271
-            },
-            "address": "Tehnika 75, 10142 Tallinn, Estonia",
-            "status": "available",
-            "power_rating": 22,
-            "distance": 890,
-            "connectors": [
-                {
-                    "power": 22,
-                    "quantity": 2
-                }
-            ]
-        },
-        {
-            "id": "4",
-            "name": "Business Center North",
-            "geocode": {
-                "lat": 59.4389,
-                "lng": 24.7545
-            },
-            "address": "Mere pst 6, 10111 Tallinn, Estonia",
-            "status": "out_of_service",
-            "power_rating": 75,
-            "distance": 2100,
-            "connectors": [
-                {
-                    "power": 75,
-                    "quantity": 1
-                },
-                {
-                    "power": 22,
-                    "quantity": 2
-                }
-            ]
-        },
-        {
-            "id": "5",
-            "name": "Hotel Grand Charging",
-            "geocode": {
-                "lat": 59.4311,
-                "lng": 24.7456
-            },
-            "address": "Pärnu highway 25, 10141 Tallinn, Estonia",
-            "status": "available",
-            "power_rating": 100,
-            "distance": 1560,
-            "connectors": [
-                {
-                    "power": 100,
-                    "quantity": 1
-                },
-                {
-                    "power": 50,
-                    "quantity": 2
-                }
-            ]
-        },
-        {
-            "id": "6",
-            "name": "University Campus East",
-            "geocode": {
-                "lat": 59.395,
-                "lng": 24.6714
-            },
-            "address": "Tallinna Tehnikaülikool, Ehitajate tee 5, 19086 Tallinn, Estonia",
-            "status": "occupied",
-            "power_rating": 22,
-            "distance": 4200,
-            "connectors": [
-                {
-                    "power": 22,
-                    "quantity": 4
-                }
-            ]
-        },
-        {
-            "id": "7",
-            "name": "Sports Complex Charger",
-            "geocode": {
-                "lat": 59.4175,
-                "lng": 24.7947
-            },
-            "address": "Tartu mnt, 11101 Tallinn, Estonia",
-            "status": "available",
-            "power_rating": 50,
-            "distance": 1780,
-            "connectors": [
-                {
-                    "power": 50,
-                    "quantity": 2
-                },
-                {
-                    "power": 22,
-                    "quantity": 1
-                }
-            ]
-        },
-        {
-            "id": "8",
-            "name": "Residential Area South",
-            "geocode": {
-                "lat": 59.4089,
-                "lng": 24.7234
-            },
-            "address": "Kotka Hall, Linnu tee 5, 11311 Tallinn, Estonia",
-            "status": "available",
-            "power_rating": 11,
-            "distance": 650,
-            "connectors": [
-                {
-                    "power": 11,
-                    "quantity": 2
-                }
-            ]
-        },
-        {
-            "id": "9",
-            "name": "Industrial Park Charger",
-            "geocode": {
-                "lat": 59.4508,
-                "lng": 24.8243
-            },
-            "address": "Panga, 12011 Tallinn, Estonia",
-            "status": "out_of_service",
-            "power_rating": 200,
-            "distance": 5800,
-            "connectors": [
-                {
-                    "power": 200,
-                    "quantity": 1
-                },
-                {
-                    "power": 150,
-                    "quantity": 1
-                }
-            ]
-        },
-        {
-            "id": "10",
-            "name": "Beach Resort Charger",
-            "geocode": {
-                "lat": 59.3834,
-                "lng": 24.6123
-            },
-            "address": "Tähetorni, 13525 Tallinn, Estonia",
-            "status": "available",
-            "power_rating": 75,
-            "distance": 3400,
-            "connectors": [
-                {
-                    "power": 75,
-                    "quantity": 1
-                },
-                {
-                    "power": 50,
-                    "quantity": 1
-                }
-            ]
-        }
-    ],
-    
-    "spot_pricing": {
-        "base_rate": 0.35,
-        "min_rate": 0.25,
-        "max_rate": 0.65,
-        "volatility_factor": 0.15,
-        "last_updated": "",
-        "currency": "EUR"
+  "stations": [
+    {
+      "id": "1",
+      "name": "Downtown Mall Charger",
+      "geocode": {
+        "lat": 59.437,
+        "lng": 24.7536
       },
-
-      "charging_sessions":[]
-}    
+      "address": "Metro Plaza, Viru väljak 2, 10111 Tallinn, Estonia",
+      "status": "available",
+      "power_rating": 50,
+      "distance": 1250,
+      "connectors": [
+        {
+          "power": 50,
+          "quantity": 2
+        },
+        {
+          "power": 22,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Airport Terminal A",
+      "geocode": {
+        "lat": 59.4133,
+        "lng": 24.8328
+      },
+      "address": "Tallinn Airport, Tartu mnt 101, 10112 Tallinn, Estonia",
+      "status": "occupied",
+      "power_rating": 150,
+      "distance": 3200,
+      "connectors": [
+        {
+          "power": 150,
+          "quantity": 1
+        },
+        {
+          "power": 50,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Supermarket Plaza",
+      "geocode": {
+        "lat": 59.4269,
+        "lng": 24.7271
+      },
+      "address": "Tehnika 75, 10142 Tallinn, Estonia",
+      "status": "available",
+      "power_rating": 22,
+      "distance": 890,
+      "connectors": [
+        {
+          "power": 22,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Business Center North",
+      "geocode": {
+        "lat": 59.4389,
+        "lng": 24.7545
+      },
+      "address": "Mere pst 6, 10111 Tallinn, Estonia",
+      "status": "out_of_service",
+      "power_rating": 75,
+      "distance": 2100,
+      "connectors": [
+        {
+          "power": 75,
+          "quantity": 1
+        },
+        {
+          "power": 22,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Hotel Grand Charging",
+      "geocode": {
+        "lat": 59.4311,
+        "lng": 24.7456
+      },
+      "address": "Pärnu highway 25, 10141 Tallinn, Estonia",
+      "status": "available",
+      "power_rating": 100,
+      "distance": 1560,
+      "connectors": [
+        {
+          "power": 100,
+          "quantity": 1
+        },
+        {
+          "power": 50,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "University Campus East",
+      "geocode": {
+        "lat": 59.395,
+        "lng": 24.6714
+      },
+      "address": "Tallinna Tehnikaülikool, Ehitajate tee 5, 19086 Tallinn, Estonia",
+      "status": "occupied",
+      "power_rating": 22,
+      "distance": 4200,
+      "connectors": [
+        {
+          "power": 22,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Sports Complex Charger",
+      "geocode": {
+        "lat": 59.4175,
+        "lng": 24.7947
+      },
+      "address": "Tartu mnt, 11101 Tallinn, Estonia",
+      "status": "available",
+      "power_rating": 50,
+      "distance": 1780,
+      "connectors": [
+        {
+          "power": 50,
+          "quantity": 2
+        },
+        {
+          "power": 22,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Residential Area South",
+      "geocode": {
+        "lat": 59.4089,
+        "lng": 24.7234
+      },
+      "address": "Kotka Hall, Linnu tee 5, 11311 Tallinn, Estonia",
+      "status": "available",
+      "power_rating": 11,
+      "distance": 650,
+      "connectors": [
+        {
+          "power": 11,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Industrial Park Charger",
+      "geocode": {
+        "lat": 59.4508,
+        "lng": 24.8243
+      },
+      "address": "Panga, 12011 Tallinn, Estonia",
+      "status": "out_of_service",
+      "power_rating": 200,
+      "distance": 5800,
+      "connectors": [
+        {
+          "power": 200,
+          "quantity": 1
+        },
+        {
+          "power": 150,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Beach Resort Charger",
+      "geocode": {
+        "lat": 59.3834,
+        "lng": 24.6123
+      },
+      "address": "Tähetorni, 13525 Tallinn, Estonia",
+      "status": "available",
+      "power_rating": 75,
+      "distance": 3400,
+      "connectors": [
+        {
+          "power": 75,
+          "quantity": 1
+        },
+        {
+          "power": 50,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "spot_pricing": {
+    "base_rate": 0.35,
+    "min_rate": 0.25,
+    "max_rate": 0.65,
+    "volatility_factor": 0.15,
+    "last_updated": "",
+    "currency": "EUR"
+  },
+  "charging_sessions": [
+    {
+      "id": "session_001",
+      "station_id": "1",
+      "connector_id": "connector_1",
+      "start_time": "2024-01-15T14:30:00.000Z",
+      "end_time": "2024-01-15T16:45:00.000Z",
+      "charge_rate": 0.45,
+      "total_cost": 12.15,
+      "status": "completed"
+    },
+    {
+      "id": "0.49503446424878944",
+      "end_time": "2025-08-10T14:12:32.854Z",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "0.4766998390279963",
+      "station_id": "Business Center North",
+      "status": "ACTIVE",
+      "start_time": "2025-08-10T15:13:56.225Z",
+      "charge_rate": 0.15
+    },
+    {
+      "id": "0.6995987940472733",
+      "station_id": "Business Center North",
+      "status": "ACTIVE",
+      "start_time": "2025-08-10T15:14:15.042Z",
+      "charge_rate": 0.15
+    }
+  ]
+}

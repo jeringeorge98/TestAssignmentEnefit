@@ -7,17 +7,23 @@ import {
   FlatList,
 } from "react-native";
 import { useState, useEffect } from "react";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { router, useLocalSearchParams, useRouter } from "expo-router";
 import Colors from "../constants/Colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import Button from "../components/Button";
-import { useGetSpotPrice } from "../api/index";
+import {
+  useGetSpotPrice,
+  useStartChargeSession,
+  useUpdateChargeSession,
+} from "../api/index";
+import { ChargingSessions } from "../types";
 interface Connector {
   id: number;
   isSelected: boolean;
 }
 
 export default function StartCharging() {
+  const startChargeSession = useStartChargeSession();
   const params = useLocalSearchParams();
   const [connectors, setConnectors] = useState<Connector[]>([]);
   const stationName = params.stationName as string;
@@ -46,6 +52,35 @@ export default function StartCharging() {
       )
     );
   };
+
+  const handleStartCharging = async () => {
+    // start charging session
+    try {
+      const sessionId = Math.random().toString();
+      const sessionRequest: ChargingSessions = {
+        id: sessionId,
+        station_id: stationName,
+        status: "ACTIVE",
+        start_time: new Date().toISOString(),
+        charge_rate: spotPrice?.rate,
+      };
+      const response = await startChargeSession.mutateAsync(sessionRequest);
+      console.log("response", response);
+      // navigate to the chargins sessions screen
+      router.push({
+        pathname: "/chargingSession",
+        params: {
+          chargeRate: spotPrice?.rate,
+          connector: connectors.find((connector) => connector.isSelected)?.id,
+          powerRating: powerRating,
+          sessionId: sessionId,
+        },
+      });
+    } catch (error) {
+      console.error("Error starting charge session", error);
+    }
+  };
+
   const getConnectorView = () => {
     return (
       <FlatList
@@ -189,9 +224,7 @@ export default function StartCharging() {
           title="Start Charging"
           style={styles.startButton}
           textStyle={styles.startButtonText}
-          onPress={() => {
-            console.log("start charging");
-          }}
+          onPress={handleStartCharging}
           icon={<MaterialIcons name="bolt" size={24} color="white" />}
         />
       </View>

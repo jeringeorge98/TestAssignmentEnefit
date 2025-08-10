@@ -48,4 +48,30 @@ export default {
   success: "#34eb7a", // Green for success states
   error: "#EF4444", // Red for error states
   warning: "#F59E0B",
+  neon: {
+    background: "#0a0a0a", // Deep black
+    surface: "#1a1a1a", // Dark gray
+    primary: "#00ff88", // Bright neon green
+    secondary: "#00d4ff", // Bright neon blue
+    accent: "#ff0080", // Hot pink
+    warning: "#ffaa00", // Neon orange
+    text: "#ffffff", // Pure white
+    textSecondary: "#888888", // Muted gray
+    glow: "#00ff88", // Green glow
+    shadow: "#000000", // Pure black
+  },
+  neonLight: {
+    background: "#fafafa", // Off-white/cream
+    surface: "#ffffff", // Pure white
+    surfaceAlt: "#f5f5f5", // Light gray
+    primary: "#00d4aa", // Teal green
+    secondary: "#0099ff", // Bright blue
+    accent: "#ff6b9d", // Soft pink
+    warning: "#ff9500", // Orange
+    text: "#1a1a1a", // Dark gray
+    textSecondary: "#666666", // Medium gray
+    glow: "#00d4aa", // Green glow
+    shadow: "#e0e0e0", // Light shadow
+    border: "#e8e8e8", // Light border
+  },
 };
