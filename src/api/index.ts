@@ -76,7 +76,19 @@ export const useStartChargeSession = () => {
 
 export const updateChargeSession = async (body: ChargingSessions) => {
   try {
-    const response = await apiClient.put(`/charging_sessions/${body.id}`, body);
+    const prevData = await apiClient.get(`/charging_sessions/${body.id}`);
+    const end_time = body.end_time;
+    const status = body.status;
+
+    const response = await apiClient.put(
+      `/charging_sessions/${body.id}`,
+
+      {
+        ...prevData.data,
+        end_time,
+        status,
+      }
+    );
     return response.data;
   } catch (error) {
     console.error("Error updating charge session", error);
@@ -98,7 +110,7 @@ export const useUpdateChargeSession = () => {
 
 // export const startChargeSession = async
 
-export const getChargingSessions = async () => {
+export const getChargingSessions = async (): Promise<ChargingSessions[]> => {
   try {
     const response = await apiClient.get("/charging_sessions");
     return response.data;

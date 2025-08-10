@@ -219,33 +219,12 @@
   },
   "charging_sessions": [
     {
-      "id": "session_001",
-      "station_id": "1",
-      "connector_id": "connector_1",
-      "start_time": "2024-01-15T14:30:00.000Z",
-      "end_time": "2024-01-15T16:45:00.000Z",
-      "charge_rate": 0.45,
-      "total_cost": 12.15,
-      "status": "completed"
-    },
-    {
-      "id": "0.49503446424878944",
-      "end_time": "2025-08-10T14:12:32.854Z",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "0.4766998390279963",
-      "station_id": "Business Center North",
-      "status": "ACTIVE",
-      "start_time": "2025-08-10T15:13:56.225Z",
-      "charge_rate": 0.15
-    },
-    {
-      "id": "0.6995987940472733",
-      "station_id": "Business Center North",
-      "status": "ACTIVE",
-      "start_time": "2025-08-10T15:14:15.042Z",
-      "charge_rate": 0.15
+      "id": "0.9160431663097756",
+      "station_id": "Hotel Grand Charging",
+      "status": "COMPLETED",
+      "start_time": "2025-08-10T16:40:29.247Z",
+      "charge_rate": 0.19,
+      "end_time": "2025-08-10T16:41:43.490Z"
     }
   ]
 }

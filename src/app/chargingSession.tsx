@@ -11,25 +11,31 @@ import { LinearGradient } from "expo-linear-gradient";
 import LottieView from "lottie-react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useUpdateChargeSession } from "../api";
 import { ChargingSessions } from "../types";
 
 export default function ChargingSession() {
   const updateChargeSession = useUpdateChargeSession();
+  const [chargeStatus, setChargeStatus] = useState(true);
   const { chargeRate, connector, powerRating, sessionId } =
     useLocalSearchParams();
 
   const handleStopCharging = async () => {
+    if (!chargeStatus) {
+      router.push("/(tabs)/history");
+      return;
+    }
+
     try {
       const sessionRequest: ChargingSessions = {
         id: sessionId as string,
         end_time: new Date().toISOString(),
         status: "COMPLETED",
       };
-      console.log("sessionRequest", sessionRequest);
       const response = await updateChargeSession.mutateAsync(sessionRequest);
       console.log("response", response);
+      setChargeStatus(false);
     } catch (error) {
       console.error("Error stopping charge session", error);
     }
@@ -42,7 +48,9 @@ export default function ChargingSession() {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>CHARGING SESSION</Text>
         <View style={styles.statusIndicator}>
-          <Text style={styles.statusText}>ACTIVE</Text>
+          <Text style={styles.statusText}>
+            {chargeStatus ? "ACTIVE" : "COMPLETED"}
+          </Text>
         </View>
       </View>
 
@@ -90,8 +98,15 @@ export default function ChargingSession() {
           colors={[Colors.colorPrimaryGreen, Colors.neonLight.glow]}
           style={styles.buttonGradient}
         >
-          <MaterialIcons name="stop" size={24} color="white" />
-          <Text style={styles.buttonText}>STOP CHARGING</Text>
+          {chargeStatus ? (
+            <MaterialIcons name="stop" size={24} color="white" />
+          ) : (
+            <MaterialIcons name="history" size={24} color="white" />
+          )}
+
+          <Text style={styles.buttonText}>
+            {chargeStatus ? "Stop Charging" : "View History"}
+          </Text>
         </LinearGradient>
       </TouchableOpacity>
     </SafeAreaView>
