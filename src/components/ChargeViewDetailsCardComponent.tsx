@@ -92,7 +92,8 @@ export const ChargeViewDetailsCardComponent = forwardRef<
       ref={bottomSheetRef}
       key="StationDetailsCard"
       name="StationDetailsCard"
-      snapPoints={["60%", "50%"]}
+      snapPoints={["80%"]}
+      enableDismissOnClose
       enablePanDownToClose={true}
       style={styles.CardContainer}
     >
@@ -125,13 +126,7 @@ export const ChargeViewDetailsCardComponent = forwardRef<
           </View>
           <View style={styles.ContainerView}>
             <MaterialIcons name="directions-car" size={24} color="black" />
-            <Text
-              style={{
-                color: Colors.textPrimary,
-                fontSize: 12,
-                alignSelf: "center",
-              }}
-            >
+            <Text>
               {stationDetails?.distance ? stationDetails?.distance / 1000 : 0}{" "}
               km
             </Text>
@@ -139,7 +134,6 @@ export const ChargeViewDetailsCardComponent = forwardRef<
           <View style={styles.ContainerView}>
             <MaterialIcons name="power" size={24} color="black" />
             <Text testID="power-rating-test-id">
-              {" "}
               {stationDetails?.power_rating} kW
             </Text>
           </View>
@@ -152,7 +146,7 @@ export const ChargeViewDetailsCardComponent = forwardRef<
             renderItem={(item) => {
               return <ConnectorItemList connector={item.item} />;
             }}
-            contentContainerStyle={{ gap: 20 }}
+            contentContainerStyle={{ gap: 15 }}
           />
         </View>
         <View>
@@ -160,12 +154,13 @@ export const ChargeViewDetailsCardComponent = forwardRef<
             style={{
               color: Colors.textPrimary,
               fontSize: 18,
+              fontWeight: 700,
             }}
           >
             Address
           </Text>
           <Text
-            style={{ color: Colors.textSecondary, fontSize: 14 }}
+            style={{ color: Colors.textPrimary, fontSize: 14 }}
             testID="address-test-id"
           >
             {stationDetails?.address}
@@ -174,11 +169,19 @@ export const ChargeViewDetailsCardComponent = forwardRef<
         <View style={{ flex: 1, marginTop: 5 }}>
           <Button
             title="Start Charging"
-            style={styles.buttonBackgroundStyle}
+            style={
+              statusInfo.text === "Available"
+                ? styles.buttonBackgroundStyle
+                : styles.disableButtonBackgroundStyle
+            }
             onPress={() => handleStartCharging(stationDetails!)}
-            textStyle={{ color: Colors.textWhite }}
+            textStyle={{
+              color: Colors.textWhite,
+              fontSize: 18,
+              fontWeight: 500,
+            }}
             icon={
-              <MaterialIcons name="electric-bolt" size={20} color="white" />
+              <MaterialIcons name="electric-bolt" size={24} color="white" />
             }
             disabled={statusInfo.text === "Available" ? false : true}
           />
@@ -196,14 +199,24 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 50,
     borderColor: Colors.border,
   },
+  disableButtonBackgroundStyle: {
+    backgroundColor: Colors.backgroundGrey,
+    borderRadius: 8,
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "90%",
+    height: 50,
+    alignSelf: "center",
+  },
   buttonBackgroundStyle: {
     backgroundColor: Colors.colorPrimaryGreen,
     borderRadius: 8,
     padding: 10,
     alignItems: "center",
     justifyContent: "center",
-    width: "70%",
-    height: 40,
+    width: "90%",
+    height: 50,
     alignSelf: "center",
   },
   bottmSheetView: {
@@ -219,7 +232,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.shadow,
     alignItems: "center",
     justifyContent: "center",
-
+    gap: 5,
     height: "100%",
     padding: 5,
     flexDirection: "row",

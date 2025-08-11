@@ -44,7 +44,7 @@ const MapComponent = ({ markers }: MapComponentProps) => {
   };
 
   const initialRegion: Region = {
-    latitude: 59.437,
+    latitude: 59.417,
     longitude: 24.7536,
     latitudeDelta: 0.08,
     longitudeDelta: 0.08,
@@ -55,8 +55,6 @@ const MapComponent = ({ markers }: MapComponentProps) => {
         style={styles.map}
         provider={PROVIDER_GOOGLE}
         initialRegion={initialRegion}
-        showsMyLocationButton={true}
-        showsUserLocation={true}
         ref={mapRef}
       >
         <Marker coordinate={initialRegion} pinColor="blue"></Marker>
@@ -73,7 +71,7 @@ const MapComponent = ({ markers }: MapComponentProps) => {
             onPress={() => handleMarkerPress(item)}
           >
             <Image
-              source={require("../../assets/images/charging-station.png")}
+              source={require("../../assets/images/charger.png")}
               style={styles.markerStyle}
             />
           </Marker>

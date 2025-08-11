@@ -264,6 +264,46 @@
       "start_time": "2025-08-11T10:01:42.143Z",
       "charge_rate": 0.16,
       "end_time": "2025-08-11T10:02:11.679Z"
+    },
+    {
+      "id": "0.1799863245388953",
+      "station_id": "Supermarket Plaza",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T16:53:05.230Z",
+      "charge_rate": 0.17,
+      "end_time": "2025-08-11T16:53:18.207Z"
+    },
+    {
+      "id": "0.12098538897120058",
+      "station_id": "Hotel Grand Charging",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T17:05:00.935Z",
+      "charge_rate": 0.25,
+      "end_time": "2025-08-11T17:05:03.170Z"
+    },
+    {
+      "id": "0.8442272220792022",
+      "station_id": "Hotel Grand Charging",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T17:40:12.065Z",
+      "charge_rate": 0.14,
+      "end_time": "2025-08-11T17:40:18.768Z"
+    },
+    {
+      "id": "0.15717759886688504",
+      "station_id": "Hotel Grand Charging",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T18:14:03.235Z",
+      "charge_rate": 0.25,
+      "end_time": "2025-08-11T18:14:12.525Z"
+    },
+    {
+      "id": "0.5254753903410162",
+      "station_id": "Supermarket Plaza",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T19:17:00.178Z",
+      "charge_rate": 0.2,
+      "end_time": "2025-08-11T19:17:10.401Z"
     }
   ]
 }

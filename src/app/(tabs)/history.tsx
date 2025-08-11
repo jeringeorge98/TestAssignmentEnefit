@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { useGetChargingSessions } from "../../api/index";
 import { ChargingSessions } from "@/src/types";
+import { format } from "date-fns";
 export default function History() {
   const { data, isLoading, error } = useGetChargingSessions();
   if (!data || error) {
@@ -16,6 +17,11 @@ export default function History() {
   if (isLoading) {
     return <ActivityIndicator style={{ flex: 1, alignSelf: "center" }} />;
   }
+
+  const formatDate = (dateString: string) => {
+    const formatDate = new Date(dateString);
+    return format(formatDate, "do MMM,yyyy");
+  };
 
   const HistoryListItem: React.FC<{ item: ChargingSessions }> = ({ item }) => {
     const duration =
@@ -32,7 +38,7 @@ export default function History() {
           >
             {item.station_id}
           </Text>
-          <Text>{item.start_time}</Text>
+          <Text>{item.start_time ? formatDate(item.start_time) : "Nan"}</Text>
         </View>
         <View style={styles.rowView}>
           <Text
@@ -45,7 +51,9 @@ export default function History() {
           >
             Duration {Math.floor(duration / 1000)} seconds
           </Text>
-          <Text style={{ color: Colors.textTertiary, fontSize: 14 }}>
+          <Text
+            style={{ color: Colors.textPrimary, fontSize: 14, fontWeight: 500 }}
+          >
             {item.charge_rate} kw/H
           </Text>
         </View>

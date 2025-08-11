@@ -13,14 +13,14 @@
   "jest": {
     "preset": "jest-expo",
     "collectCoverage": true,
-  "collectCoverageFrom": [
-    "**/*.{ts,tsx,js,jsx}",
-    "!**/coverage/**",
-    "!**/node_modules/**",
-    "!**/babel.config.js",
-    "!**/expo-env.d.ts",
-    "!**/.expo/**"
-  ]
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx,js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/babel.config.js",
+      "!**/expo-env.d.ts",
+      "!**/.expo/**"
+    ]
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
@@ -28,6 +28,7 @@
     "@react-navigation/native": "^7.1.6",
     "@tanstack/react-query": "^5.84.1",
     "axios": "^1.11.0",
+    "date-fns": "^4.1.0",
     "expo": "~53.0.20",
     "expo-font": "~13.3.2",
     "expo-linear-gradient": "~14.1.5",
@@ -46,6 +47,7 @@
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
+    "react-native-toast-message": "^2.3.3",
     "react-native-web": "~0.20.0"
   },
   "devDependencies": {

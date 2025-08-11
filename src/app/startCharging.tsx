@@ -5,8 +5,11 @@ import {
   SafeAreaView,
   TouchableOpacity,
   FlatList,
+  ToastAndroid,
+  Alert,
 } from "react-native";
 import { useState, useEffect } from "react";
+import Toast from "react-native-toast-message";
 import { router, useLocalSearchParams, useRouter } from "expo-router";
 import Colors from "../constants/Colors";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -56,6 +59,16 @@ export default function StartCharging() {
   const handleStartCharging = async () => {
     // start charging session
     try {
+      if (!connectors.find((item) => item.isSelected == true)) {
+        Alert.alert("Information", "Please Choose a Connector", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
+        return;
+      }
+
       const sessionId = Math.random().toString();
       const sessionRequest: ChargingSessions = {
         id: sessionId,
@@ -147,11 +160,12 @@ export default function StartCharging() {
             <Text style={styles.stationName}>{stationName} Station</Text>
           </View>
         </View>
+        <Toast />
         <Text
           style={{
             color: Colors.textSecondary,
             fontSize: 16,
-            fontWeight: "600",
+            fontWeight: "700",
             marginLeft: 5,
           }}
         >
@@ -241,7 +255,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 10,
     backgroundColor: Colors.cardBackground,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
   },
   startButton: {
     backgroundColor: Colors.colorPrimaryGreen,
@@ -292,10 +306,10 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
   },
   stationName: {
-    fontSize: 20,
-    fontWeight: "600",
+    fontSize: 21,
+    fontWeight: "700",
     color: Colors.textPrimary,
-    marginBottom: 4,
+    marginBottom: 12,
   },
   stationLocation: {
     fontSize: 14,

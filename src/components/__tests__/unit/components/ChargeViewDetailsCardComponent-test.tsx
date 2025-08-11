@@ -55,7 +55,7 @@ jest.mock("@gorhom/bottom-sheet", () => {
 
 jest.mock("../../../ConnectorItemList.tsx", () => ({
   ConnectorItemList: ({ connector }: any) => (
-    <div testID={`connector-${connector.power}`}>
+    <div testId={`connector-${connector.power}`}>
       Power: {connector.power}kW, Quantity: {connector.quantity}
     </div>
   ),

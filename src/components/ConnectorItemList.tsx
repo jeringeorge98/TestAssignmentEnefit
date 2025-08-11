@@ -10,9 +10,9 @@ type ConnectorItemListProps = {
 export const ConnectorItemList = ({ connector }: ConnectorItemListProps) => {
   return (
     <View style={{ flex: 1, flexDirection: "row", gap: 5 }}>
-      <MaterialIcons name="settings-input-svideo" size={24} color="black" />
+      <MaterialIcons name="settings-input-svideo" size={29} color="black" />
       <View style={{ flex: 1, flexDirection: "column" }}>
-        <Text style={{ color: Colors.textSecondary, fontSize: 12 }}>
+        <Text style={{ color: Colors.textSecondary, fontSize: 14 }}>
           {connector.power} kW
         </Text>
         <View
@@ -26,7 +26,7 @@ export const ConnectorItemList = ({ connector }: ConnectorItemListProps) => {
             backgroundColor: Colors.backgroundGrey,
           }}
         >
-          <Text style={{ color: Colors.textSecondary, fontSize: 12 }}>
+          <Text style={{ color: Colors.textPrimary, fontSize: 12 }}>
             x{connector.quantity}
           </Text>
         </View>
