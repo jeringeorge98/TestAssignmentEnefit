@@ -48,18 +48,6 @@ export default {
   success: "#34eb7a", // Green for success states
   error: "#EF4444", // Red for error states
   warning: "#F59E0B",
-  neon: {
-    background: "#0a0a0a", // Deep black
-    surface: "#1a1a1a", // Dark gray
-    primary: "#00ff88", // Bright neon green
-    secondary: "#00d4ff", // Bright neon blue
-    accent: "#ff0080", // Hot pink
-    warning: "#ffaa00", // Neon orange
-    text: "#ffffff", // Pure white
-    textSecondary: "#888888", // Muted gray
-    glow: "#00ff88", // Green glow
-    shadow: "#000000", // Pure black
-  },
   neonLight: {
     background: "#fafafa", // Off-white/cream
     surface: "#ffffff", // Pure white

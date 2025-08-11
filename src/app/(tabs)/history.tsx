@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import { useGetChargingSessions } from "../../api/index";
 import { ChargingSessions } from "@/src/types";
-import { ReactNode } from "react";
 export default function History() {
   const { data, isLoading, error } = useGetChargingSessions();
   if (!data || error) {
@@ -59,7 +58,7 @@ export default function History() {
       <Text style={styles.title}>History</Text>
       <FlatList
         data={data}
-        renderItem={({ item, index }) => <HistoryListItem item={item} />}
+        renderItem={({ item }) => <HistoryListItem item={item} />}
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ gap: 10 }}
       />

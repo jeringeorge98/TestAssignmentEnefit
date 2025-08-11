@@ -23,7 +23,7 @@ export const ListViewComponent = ({
   };
 
   return (
-    <Pressable style={styles.container} onPress={handleOnPress}>
+    <Pressable style={styles.container} onPress={handleOnPress} testID="list-item-pressable">
       <View style={styles.rowView}>
         <Text
           style={{

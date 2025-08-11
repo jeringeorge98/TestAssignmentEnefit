@@ -240,6 +240,30 @@
       "start_time": "2025-08-10T18:01:26.872Z",
       "charge_rate": 0.15,
       "end_time": "2025-08-10T18:01:34.825Z"
+    },
+    {
+      "id": "0.20456141429964922",
+      "station_id": "Residential Area South",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T09:53:32.646Z",
+      "charge_rate": 0.11,
+      "end_time": "2025-08-11T09:54:20.765Z"
+    },
+    {
+      "id": "0.8833310758771163",
+      "station_id": "Beach Resort Charger",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T09:57:57.042Z",
+      "charge_rate": 0.11,
+      "end_time": "2025-08-11T09:58:13.831Z"
+    },
+    {
+      "id": "0.367426992961497",
+      "station_id": "Residential Area South",
+      "status": "COMPLETED",
+      "start_time": "2025-08-11T10:01:42.143Z",
+      "charge_rate": 0.16,
+      "end_time": "2025-08-11T10:02:11.679Z"
     }
   ]
 }

@@ -8,9 +8,17 @@ export default function MapsScreen() {
   // need to display a map with the markers
   const { data, isLoading, error } = useGetStations();
 
-  // console.log("Station data", data);
+  // loading state shows a loading indiactor
+  if (isLoading)
+    return (
+      <ActivityIndicator
+        size="large"
+        color="#0000ff"
+        testID="activity-indicator"
+      />
+    );
 
-  if (isLoading) return <ActivityIndicator size="large" color="#0000ff" />;
+  // error state
   if (!data || error)
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -19,6 +27,8 @@ export default function MapsScreen() {
         </Text>
       </View>
     );
+
+  // sucess state
   return (
     <View style={styles.container}>
       <MapComponent markers={data as stationData[]} />

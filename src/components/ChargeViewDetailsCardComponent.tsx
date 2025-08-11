@@ -138,7 +138,10 @@ export const ChargeViewDetailsCardComponent = forwardRef<
           </View>
           <View style={styles.ContainerView}>
             <MaterialIcons name="power" size={24} color="black" />
-            <Text> {stationDetails?.power_rating} kW</Text>
+            <Text testID="power-rating-test-id">
+              {" "}
+              {stationDetails?.power_rating} kW
+            </Text>
           </View>
         </View>
         <View style={{ flex: 1 }}>
@@ -161,7 +164,10 @@ export const ChargeViewDetailsCardComponent = forwardRef<
           >
             Address
           </Text>
-          <Text style={{ color: Colors.textSecondary, fontSize: 14 }}>
+          <Text
+            style={{ color: Colors.textSecondary, fontSize: 14 }}
+            testID="address-test-id"
+          >
             {stationDetails?.address}
           </Text>
         </View>

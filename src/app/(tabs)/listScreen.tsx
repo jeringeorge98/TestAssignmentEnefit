@@ -26,6 +26,7 @@ export default function ListScreen() {
 
   return (
     <View style={listScreenStyles.container}>
+      {/** Search button */}
       <TextInput
         style={listScreenStyles.searchInput}
         placeholder="Search"

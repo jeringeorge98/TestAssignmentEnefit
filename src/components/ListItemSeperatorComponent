@@ -1,9 +1,0 @@
-import { View, StyleSheet } from "react-native";
-
-const ListItemSeperatorComponent = () => <View style={styles.separator} />;
-
-const styles = StyleSheet.create({
-  separator: {
-    height: 8,
-  },
-});

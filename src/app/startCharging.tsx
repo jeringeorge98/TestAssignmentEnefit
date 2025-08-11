@@ -191,27 +191,6 @@ export default function StartCharging() {
           </Text>
         </View>
       </View>
-      {/* Payment Method Card */}
-      <View style={styles.card}>
-        <View style={styles.cardHeader}>
-          <Text style={styles.cardTitle}>Payment Method</Text>
-          <TouchableOpacity>
-            <MaterialIcons
-              name="chevron-right"
-              size={24}
-              color={Colors.textSecondary}
-            />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.paymentRow}>
-          <MaterialIcons
-            name="credit-card"
-            size={24}
-            color={Colors.colorPrimaryGreen}
-          />
-          <Text style={styles.paymentText}>VISA •••• 1234</Text>
-        </View>
-      </View>
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Choose A Connector</Text>
