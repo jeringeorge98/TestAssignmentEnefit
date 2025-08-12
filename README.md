@@ -66,9 +66,8 @@ npm run test
 ```
 - All tests are written in the components/__tests__/ folder 
 
-## Room For Improvements
+### Room For Improvements
 
-There are a couple of Improvements that I would have loved to add to this project
 
 ## Improvements for the future
  
