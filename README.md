@@ -66,12 +66,12 @@ npm run test
 ```
 - All tests are written in the components/__tests__/ folder 
 
-### Room For Improvements
+# Room For Improvements
 
 
 ## Improvements for the future
  
-# Adding Distance Calculation with respect to the user location
+### Adding Distance Calculation with respect to the user location
 
 Right now the distances from the user and each charging station is fixed and static . I would like to dynamically calculate this .I would do this in couple of ways 
 - When the user logs into the app the user location is picked and then an api is called in the background this would save the user location in the server, we could use some PostGres table functions to calculate the distance from the user to the station and save it in the station table or have another api that could calculate the distance and return along with our station data .
