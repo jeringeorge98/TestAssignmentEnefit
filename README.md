@@ -46,7 +46,7 @@ npm run start
 ### Additional Libraries
 - **Navigation** - Expo Router
 - **Networking** - TanStack React Query, Axios
-= **Third Party Api** - React Native Maps ,Lottie , etc
+- **Third Party Api** - React Native Maps ,Lottie , etc
 
 
 ### Styling & UI
