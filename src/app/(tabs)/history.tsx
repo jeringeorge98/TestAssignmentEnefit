@@ -11,8 +11,21 @@ import { ChargingSessions } from "@/src/types";
 import { format } from "date-fns";
 export default function History() {
   const { data, isLoading, error } = useGetChargingSessions();
-  if (!data || error) {
-    return <Text>No History Available</Text>;
+  if (!data || data.length == 0 || error) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text
+          testID="no-history-text"
+          style={{
+            color: Colors.textPrimary,
+            fontSize: 18,
+            fontWeight: 500,
+          }}
+        >
+          No History Available
+        </Text>
+      </View>
+    );
   }
   if (isLoading) {
     return <ActivityIndicator style={{ flex: 1, alignSelf: "center" }} />;

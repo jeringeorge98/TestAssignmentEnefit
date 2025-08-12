@@ -377,7 +377,7 @@ describe("<History />", () => {
       expect(screen.getByText("No History Available")).toBeTruthy();
     });
 
-    test("displays empty data array correctly", () => {
+    test("displays no idtory text for empty array correctly", () => {
       mockUseGetChargingSessions.mockReturnValue({
         data: [],
         isLoading: false,
@@ -387,7 +387,7 @@ describe("<History />", () => {
       renderWithQueryClient(<History />);
 
       // Should display History title
-      expect(screen.getByText("History")).toBeTruthy();
+      expect(screen.getByTestId("no-history-text")).toBeTruthy();
       // Should not crash with empty array
     });
   });
