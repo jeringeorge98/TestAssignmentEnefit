@@ -68,27 +68,39 @@ npm run test
 
 # Room For Improvements
 
+## Future Enhancements
 
-## Improvements for the future
- 
-### Adding Distance Calculation with respect to the user location
+### 1. Dynamic Distance Calculation
 
-Right now the distances from the user and each charging station is fixed and static . I would like to dynamically calculate this .I would do this in couple of ways 
-- When the user logs into the app the user location is picked and then an api is called in the background this would save the user location in the server, we could use some PostGres table functions to calculate the distance from the user to the station and save it in the station table or have another api that could calculate the distance and return along with our station data .
+Currently, the distances from the user to each charging station are static and fixed. I plan to implement dynamic distance calculation in the following ways:
 
-This would also help us sort the stations based on nearest to farthest and help in displaying that data meaningfully . 
+- **User Location Tracking**: When a user logs into the app, their location will be captured and sent to the server via an API call
+- **Distance Calculation**: Implement PostgreSQL table functions to calculate real-time distances from the user to each station
+- **Dynamic Sorting**: Enable sorting stations based on proximity (nearest to farthest) for better user experience
 
-# Adding Navigation from their location to the address of the Station
+### 2. Navigation Integration
 
-Currenlty only the address is visible to the user ,I would like to add a maps button next to the address ,when clicked would open google maps that would help them navigate thereby improving user experience.
+**Current State**: Only station addresses are displayed to users
 
-# Notifications to notify users about ideal charge times based on prices
+**Proposed Enhancement**: Add a maps button next to each station address that opens Google Maps for turn-by-turn navigation, significantly improving user experience
 
-In situations when we have different energy prices I would like to send out push notifications for users when the energy prices are favourable so that they can charge.
+### 3. Smart Price Notifications
 
-# Adding Payment Integrations
-Would like to integrate stripe or other payment integrations which would help in integrating payment while starting the charging 
+Implement push notifications to alert users about optimal charging times based on energy prices:
 
-## Didnt have time to implement
-I have managed to implement all the funcitonal use cases asked  for in the assignment
+- Monitor energy price fluctuations
+- Send notifications when prices are favorable
+- Help users save money by charging during low-rate periods
+
+### 4. Payment Integration
+
+Integrate payment solutions such as Stripe or similar services to enable seamless payment processing when starting charging sessions.
+
+---
+
+## Implementation Status
+
+✅ **Completed**: All functional use cases specified in the assignment have been successfully implemented
+
+⏳ **Pending**: The above enhancements are planned for future development phases
 
