@@ -100,7 +100,10 @@ Integrate payment solutions such as Stripe or similar services to enable seamles
 
 ## Implementation Status
 
-✅ **Completed**: All functional use cases specified in the assignment have been successfully implemented
+ **Completed**: All functional use cases specified in the assignment have been successfully implemented
 
-⏳ **Pending**: The above enhancements are planned for future development phases
+---
+## Thanks and Acknowledgment: 
+
+I would like to thank Enefit for providing me the oppurtunity to display my skills this has been a wonderful experience with learning how to apply my skills and I am glad I got that oppurtunity.Thank You
 
