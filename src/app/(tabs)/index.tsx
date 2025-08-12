@@ -2,7 +2,6 @@ import { ActivityIndicator, StyleSheet } from "react-native";
 import { Text, View } from "@/src/components/Themed";
 import MapComponent from "@/src/components/MapComponent";
 import { useGetStations } from "@/src/api";
-import { Region } from "react-native-maps";
 import { stationData } from "@/src/types";
 export default function MapsScreen() {
   // need to display a map with the markers

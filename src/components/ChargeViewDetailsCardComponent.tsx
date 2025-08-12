@@ -11,7 +11,6 @@ import { Connector, stationData } from "../types";
 import Colors from "../constants/Colors";
 import {
   BottomSheetModal,
-  BottomSheetScrollView,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
 import { ConnectorItemList } from "./ConnectorItemList";

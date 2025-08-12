@@ -5,7 +5,6 @@ import {
   SafeAreaView,
   TouchableOpacity,
   FlatList,
-  ToastAndroid,
   Alert,
 } from "react-native";
 import { useState, useEffect } from "react";

@@ -304,6 +304,14 @@
       "start_time": "2025-08-11T19:17:00.178Z",
       "charge_rate": 0.2,
       "end_time": "2025-08-11T19:17:10.401Z"
+    },
+    {
+      "id": "0.44637744928121376",
+      "station_id": "Business Center North",
+      "status": "COMPLETED",
+      "start_time": "2025-08-12T10:11:35.360Z",
+      "charge_rate": 0.13,
+      "end_time": "2025-08-12T10:12:14.033Z"
     }
   ]
 }

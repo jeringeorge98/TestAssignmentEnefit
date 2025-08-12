@@ -1,21 +1,13 @@
 import React, { useCallback, useRef, useState } from "react";
 import { withModalProvider } from "./withModalProvider";
 import { StyleSheet, View, Image } from "react-native";
-import MapView, {
-  PROVIDER_GOOGLE,
-  Region,
-  Marker,
-  Callout,
-} from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Region, Marker } from "react-native-maps";
 import { stationData } from "@/src/types";
-// import ChargeViewDetailsCardComponent from "./ChargeViewDetailsCardComponent";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
 import { ChargeViewDetailsCardComponent } from "./ChargeViewDetailsCardComponent";
 type MapComponentProps = {
   markers: stationData[];
 };
-
-// const ChargerIcon = require("@/assets/images/charger.png");
 
 const MapComponent = ({ markers }: MapComponentProps) => {
   const mapRef = useRef<MapView>(null);
