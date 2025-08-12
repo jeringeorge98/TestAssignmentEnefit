@@ -9,16 +9,11 @@ import {
   Alert,
 } from "react-native";
 import { useState, useEffect } from "react";
-import Toast from "react-native-toast-message";
-import { router, useLocalSearchParams, useRouter } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import Colors from "../constants/Colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import Button from "../components/Button";
-import {
-  useGetSpotPrice,
-  useStartChargeSession,
-  useUpdateChargeSession,
-} from "../api/index";
+import { useGetSpotPrice, useStartChargeSession } from "../api/index";
 import { ChargingSessions } from "../types";
 interface Connector {
   id: number;
@@ -160,7 +155,6 @@ export default function StartCharging() {
             <Text style={styles.stationName}>{stationName} Station</Text>
           </View>
         </View>
-        <Toast />
         <Text
           style={{
             color: Colors.textSecondary,

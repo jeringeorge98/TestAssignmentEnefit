@@ -20,6 +20,9 @@ export default function History() {
 
   const formatDate = (dateString: string) => {
     const formatDate = new Date(dateString);
+    if (isNaN(formatDate.getTime())) {
+      return "Invalid Date";
+    }
     return format(formatDate, "do MMM,yyyy");
   };
 

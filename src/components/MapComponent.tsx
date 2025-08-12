@@ -56,6 +56,8 @@ const MapComponent = ({ markers }: MapComponentProps) => {
         provider={PROVIDER_GOOGLE}
         initialRegion={initialRegion}
         ref={mapRef}
+        zoomControlEnabled
+        zoomEnabled
       >
         <Marker coordinate={initialRegion} pinColor="blue"></Marker>
 

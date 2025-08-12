@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from "react";
 import { router } from "expo-router";
-import { stationData } from "../types";
+import { Connector, stationData } from "../types";
 import Colors from "../constants/Colors";
 import {
   BottomSheetModal,
@@ -40,6 +40,11 @@ export const ChargeViewDetailsCardComponent = forwardRef<
   const handleDismiss = useCallback(() => {
     bottomSheetRef.current?.dismiss();
   }, []);
+
+  const renderItem = useCallback(
+    ({ item }: { item: Connector }) => <ConnectorItemList connector={item} />,
+    []
+  );
 
   const handleStartCharging = useCallback((station: stationData) => {
     router.push({
@@ -98,7 +103,7 @@ export const ChargeViewDetailsCardComponent = forwardRef<
       style={styles.CardContainer}
     >
       <BottomSheetView style={styles.bottmSheetView}>
-        <View style={{ flex: 1, flexDirection: "row" }}>
+        <View style={{ flex: 1, flexDirection: "row", paddingHorizontal: 2 }}>
           <Text style={styles.titleText}>{stationDetails?.name} </Text>
         </View>
         <View
@@ -143,9 +148,7 @@ export const ChargeViewDetailsCardComponent = forwardRef<
             data={stationDetails?.connectors}
             horizontal={true}
             keyExtractor={(item, index) => index.toString()}
-            renderItem={(item) => {
-              return <ConnectorItemList connector={item.item} />;
-            }}
+            renderItem={renderItem}
             contentContainerStyle={{ gap: 15 }}
           />
         </View>

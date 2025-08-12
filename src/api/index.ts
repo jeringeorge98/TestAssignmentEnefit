@@ -60,11 +60,12 @@ export const startChargeSession = async (body: ChargingSessions) => {
   }
 };
 
+//hook for start charging session
 export const useStartChargeSession = () => {
   return useMutation({
     mutationFn: (body: ChargingSessions) => startChargeSession(body),
     onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["charging_sessions"] });
+      queryClient.invalidateQueries({ queryKey: ["charging_sessions"] }); // invalidate the charging_sessions query so that we could get the data.
     },
     onError: (error) => {
       console.error("Error starting charge session", error);
@@ -84,7 +85,7 @@ export const updateChargeSession = async (body: ChargingSessions) => {
       `/charging_sessions/${body.id}`,
 
       {
-        ...prevData.data,
+        ...prevData.data, // add the previous data and then add the new fields
         end_time,
         status,
       }
@@ -108,8 +109,7 @@ export const useUpdateChargeSession = () => {
   });
 };
 
-// export const startChargeSession = async
-
+// get all charging sessions
 export const getChargingSessions = async (): Promise<ChargingSessions[]> => {
   try {
     const response = await apiClient.get("/charging_sessions");

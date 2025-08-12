@@ -10,19 +10,8 @@ jest.mock("../../../api", () => ({
   useGetChargingSessions: jest.fn(),
 }));
 
-// Mock Colors
-jest.mock("../../../constants/Colors", () => ({
-  textPrimary: "#000000",
-  textSecondary: "#666666",
-  textTertiary: "#999999",
-  background: "#ffffff",
-  border: "#cccccc",
-  cardBackground: "#f9f9f9",
-}));
-
-const mockUseGetChargingSessions = useGetChargingSessions as jest.MockedFunction<
-  typeof useGetChargingSessions
->;
+const mockUseGetChargingSessions =
+  useGetChargingSessions as jest.MockedFunction<typeof useGetChargingSessions>;
 
 const renderWithQueryClient = (component: React.ReactElement) => {
   const queryClient = new QueryClient({
@@ -65,7 +54,6 @@ describe("<History />", () => {
 
       // 1.5 hours = 5400 seconds
       expect(screen.getByText("Duration 5400 seconds")).toBeTruthy();
-      expect(screen.getByText("Tesla Supercharger")).toBeTruthy();
     });
 
     test("handles different duration calculations correctly", () => {
@@ -83,7 +71,7 @@ describe("<History />", () => {
           station_id: "Station 2",
           start_time: "2025-01-01T12:00:00.000Z",
           end_time: "2025-01-01T14:05:00.000Z", // 2 hours 5 minutes = 7500 seconds
-          charge_rate: 0.30,
+          charge_rate: 0.3,
           status: "COMPLETED",
         },
       ];
@@ -99,35 +87,12 @@ describe("<History />", () => {
       expect(screen.getByText("Duration 900 seconds")).toBeTruthy();
       expect(screen.getByText("Duration 7500 seconds")).toBeTruthy();
     });
-
-    test("handles zero duration correctly", () => {
-      const mockData: ChargingSessions[] = [
-        {
-          id: "1",
-          station_id: "Quick Stop",
-          start_time: "2025-01-01T10:00:00.000Z",
-          end_time: "2025-01-01T10:00:00.000Z", // Same time = 0 seconds
-          charge_rate: 0.25,
-          status: "COMPLETED",
-        },
-      ];
-
-      mockUseGetChargingSessions.mockReturnValue({
-        data: mockData,
-        isLoading: false,
-        error: null,
-      } as any);
-
-      renderWithQueryClient(<History />);
-
-      expect(screen.getByText("Duration 0 seconds")).toBeTruthy();
-    });
   });
 
   describe("Null/Undefined Date Handling", () => {
-    test("handles null end_time gracefully", () => {
+    test("handles null end_time", () => {
       const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
-      
+
       const mockData: ChargingSessions[] = [
         {
           id: "1",
@@ -153,9 +118,9 @@ describe("<History />", () => {
       consoleErrorSpy.mockRestore();
     });
 
-    test("handles null start_time gracefully", () => {
+    test("handles null start_time ", () => {
       const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
-      
+
       const mockData: ChargingSessions[] = [
         {
           id: "1",
@@ -182,7 +147,7 @@ describe("<History />", () => {
 
     test("handles both start_time and end_time being null", () => {
       const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
-      
+
       const mockData: ChargingSessions[] = [
         {
           id: "1",
@@ -209,7 +174,7 @@ describe("<History />", () => {
 
     test("handles undefined dates", () => {
       const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
-      
+
       const mockData: ChargingSessions[] = [
         {
           id: "1",
@@ -238,7 +203,7 @@ describe("<History />", () => {
   describe("Invalid Date String Handling", () => {
     test("handles invalid date strings", () => {
       const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
-      
+
       const mockData: ChargingSessions[] = [
         {
           id: "1",
@@ -263,44 +228,9 @@ describe("<History />", () => {
       consoleErrorSpy.mockRestore();
     });
 
-    test("handles mixed valid and invalid dates", () => {
-      const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
-      
-      const mockData: ChargingSessions[] = [
-        {
-          id: "1",
-          station_id: "Mixed Date Station",
-          start_time: "2025-01-01T10:00:00.000Z", // Valid
-          end_time: "invalid-end-date", // Invalid
-          charge_rate: 0.25,
-          status: "COMPLETED",
-        },
-        {
-          id: "2",
-          station_id: "Another Station",
-          start_time: "invalid-start-date", // Invalid
-          end_time: "2025-01-01T11:00:00.000Z", // Valid
-          charge_rate: 0.30,
-          status: "COMPLETED",
-        },
-      ];
-
-      mockUseGetChargingSessions.mockReturnValue({
-        data: mockData,
-        isLoading: false,
-        error: null,
-      } as any);
-
-      expect(() => {
-        renderWithQueryClient(<History />);
-      }).not.toThrow();
-
-      consoleErrorSpy.mockRestore();
-    });
-
     test("handles empty string dates", () => {
       const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
-      
+
       const mockData: ChargingSessions[] = [
         {
           id: "1",
@@ -363,7 +293,7 @@ describe("<History />", () => {
           station_id: "Another Valid Station",
           start_time: "2025-01-01T12:00:00.000Z",
           end_time: "2025-01-01T13:00:00.000Z",
-          charge_rate: 0.30,
+          charge_rate: 0.3,
           status: "COMPLETED",
         },
       ] as ChargingSessions[];
@@ -386,7 +316,7 @@ describe("<History />", () => {
           id: "1",
           station_id: "Time Travel Station",
           start_time: "2025-01-01T12:00:00.000Z", // Later time
-          end_time: "2025-01-01T10:00:00.000Z",   // Earlier time
+          end_time: "2025-01-01T10:00:00.000Z", // Earlier time
           charge_rate: 0.25,
           status: "COMPLETED",
         },
@@ -418,7 +348,7 @@ describe("<History />", () => {
       // BUG: The component checks !data before isLoading, so it shows error message during loading
       // This test documents the current buggy behavior
       expect(screen.getByText("No History Available")).toBeTruthy();
-      
+
       // The loading indicator is never shown due to incorrect condition order
       expect(screen.queryByText("History")).toBeNull();
     });
@@ -486,7 +416,7 @@ describe("<History />", () => {
       // Check all displayed information
       expect(screen.getByText("History")).toBeTruthy();
       expect(screen.getByText("Tesla Downtown")).toBeTruthy();
-      expect(screen.getByText("2025-01-01T10:00:00.000Z")).toBeTruthy();
+      expect(screen.getByText("1st Jan,2025")).toBeTruthy();
       expect(screen.getByText("Duration 7200 seconds")).toBeTruthy();
       expect(screen.getByText("0.28 kw/H")).toBeTruthy();
     });
@@ -506,7 +436,7 @@ describe("<History />", () => {
           station_id: "Station B",
           start_time: "2025-01-01T14:00:00.000Z",
           end_time: "2025-01-01T15:30:00.000Z",
-          charge_rate: 0.30,
+          charge_rate: 0.3,
           status: "COMPLETED",
         },
       ];

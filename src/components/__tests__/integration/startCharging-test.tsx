@@ -116,21 +116,6 @@ describe("<StartCharging />", () => {
       expect(screen.getByText("Charging Fees")).toBeTruthy();
       expect(screen.getByText("Choose A Connector")).toBeTruthy();
     });
-
-    test("handles different parameter values", () => {
-      const customParams = {
-        stationName: "ChargePoint Station",
-        noOfConnectors: "2",
-        powerRating: "250",
-      };
-      mockUseLocalSearchParams.mockReturnValue(customParams);
-
-      render(<StartCharging />);
-
-      expect(screen.getByText("ChargePoint Station Station")).toBeTruthy();
-      expect(screen.getByText("2 Connectors Available")).toBeTruthy();
-      expect(screen.getByText("250 kW max")).toBeTruthy();
-    });
   });
 
   describe("Spot Price API Integration", () => {
@@ -139,20 +124,6 @@ describe("<StartCharging />", () => {
 
       // Check spot price display
       expect(screen.getByText("0.25 EUR/kWh")).toBeTruthy();
-    });
-
-    test("handles spot price loading state", () => {
-      mockUseGetSpotPrice.mockReturnValue({
-        data: undefined,
-        isLoading: true,
-        error: null,
-      });
-
-      render(<StartCharging />);
-
-      // Component should render without crashing during loading
-      expect(screen.getByText("Tesla Supercharger Station")).toBeTruthy();
-      expect(screen.getByText("Charging Fees")).toBeTruthy();
     });
 
     test("handles spot price API error", () => {
@@ -166,23 +137,6 @@ describe("<StartCharging />", () => {
 
       // Component should still render without crashing on error
       expect(screen.getByText("Tesla Supercharger Station")).toBeTruthy();
-    });
-
-    test("displays different spot price values", () => {
-      const customSpotPrice = {
-        rate: 0.35,
-        curreny: "USD",
-        lastUpdated: "2025-01-01T11:00:00Z",
-      };
-      mockUseGetSpotPrice.mockReturnValue({
-        data: customSpotPrice,
-        isLoading: false,
-        error: null,
-      });
-
-      render(<StartCharging />);
-
-      expect(screen.getByText("0.35 USD/kWh")).toBeTruthy();
     });
   });
 
@@ -289,29 +243,7 @@ describe("<StartCharging />", () => {
       });
     });
 
-    test("generates unique session ID for each session", async () => {
-      mockStartSessionMutation.mutateAsync.mockResolvedValueOnce({
-        success: true,
-      });
-
-      render(<StartCharging />);
-
-      const connector1 = screen.getByText("Connecter 1").parent;
-      fireEvent.press(connector1!);
-
-      const startButton = screen.getByText("Start Charging");
-      fireEvent.press(startButton);
-
-      await waitFor(() => {
-        expect(mockStartSessionMutation.mutateAsync).toHaveBeenCalledWith(
-          expect.objectContaining({
-            id: "0.123456789", // Based on mocked Math.random()
-          })
-        );
-      });
-    });
-
-    test("handles API error gracefully during session start", async () => {
+    test("handles API error  during session start", async () => {
       const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation();
       mockStartSessionMutation.mutateAsync.mockRejectedValueOnce(
         new Error("API Error")

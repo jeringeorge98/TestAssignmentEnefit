@@ -5,10 +5,10 @@ We have put together a small task to give us a better overview of your capabilit
 assignment is to build a simple mobile application that simulates the management of electric
 vehicle charging stations.
 Functional Use Cases:
-1. As a user, I can see a list of chargers
-2. As a user, I can start charging on a specific charger
-3. As a user, I can see the ongoing charging rate if charging was started successfully
-4. As a user, I can stop ongoing charging
+1. As a user, I can see a list of chargers --- Done
+2. As a user, I can start charging on a specific charger -- Done
+3. As a user, I can see the ongoing charging rate if charging was started successfully -- Done
+4. As a user, I can stop ongoing charging -- Done
 Technical Requirements:
 • Use React Native and TypeScript
 • For data handling, you can choose between a mock backend (e.g., Express.js,

@@ -9,7 +9,7 @@ type ConnectorItemListProps = {
 
 export const ConnectorItemList = ({ connector }: ConnectorItemListProps) => {
   return (
-    <View style={{ flex: 1, flexDirection: "row", gap: 5 }}>
+    <View style={{ flex: 1, flexDirection: "row", gap: 5 }} testID={`connector-${connector.power}`}>
       <MaterialIcons name="settings-input-svideo" size={29} color="black" />
       <View style={{ flex: 1, flexDirection: "column" }}>
         <Text style={{ color: Colors.textSecondary, fontSize: 14 }}>

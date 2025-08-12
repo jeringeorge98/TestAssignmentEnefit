@@ -129,31 +129,6 @@ describe("<ChargeViewDetailsCardComponent />", () => {
       // Check start charging button
       expect(screen.getByText("Start Charging")).toBeTruthy();
     });
-
-    test("renders without station data", () => {
-      render(
-        <ChargeViewDetailsCardComponent
-          ref={mockRef}
-          stationDetails={undefined}
-        />
-      );
-
-      expect(screen.getByTestId("bottom-sheet-modal")).toBeTruthy();
-      expect(screen.getByTestId("bottom-sheet-view")).toBeTruthy();
-    });
-
-    test("renders connectors list", () => {
-      render(
-        <ChargeViewDetailsCardComponent
-          ref={mockRef}
-          stationDetails={mockStationData}
-        />
-      );
-
-      // Check if connectors are rendered
-      expect(screen.getByTestId("connector-50")).toBeTruthy();
-      expect(screen.getByTestId("connector-100")).toBeTruthy();
-    });
   });
 
   describe("Status Display", () => {

@@ -1,5 +1,6 @@
 import { SpotPrice } from "../types";
 
+// creates a random spot price trying to mock the real spot price behaviour
 export class SpotPricingService {
   private static averageRate = 0.45;
   static async getSpotPrice(): Promise<SpotPrice> {
